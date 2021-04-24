@@ -1,5 +1,5 @@
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QFormLayout, QGraphicsView, QHBoxLayout, QLabel, QMainWindow, QVBoxLayout, QPushButton, QWidget, QGridLayout
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QHBoxLayout, QLabel, QSlider, QVBoxLayout, QWidget
 import sys
 
 from onedim.onedim import OneDim
@@ -32,16 +32,26 @@ class MainWindow(QWidget):
 
         self.rule_label = QLabel("Rule:")
 
+        self.slider = QSlider(Qt.Horizontal)
+        self.slider.setMinimum(10)
+        self.slider.setMaximum(1000)
+        self.slider.setValue(910)
+        self.slider.setTickInterval(10)
+        self.slider.setTickPosition(QSlider.TicksBelow)
+        self.slider.valueChanged.connect(self.slider_changed)
+
+        self.slider_label = QLabel("Speed:")
+
         self.viewer = ImageViewer()
         self.viewer.set_model(self.board)
-        # self.viewer.resize(self.viewer.pixmap().size())
-        # self.viewer.setFixedWidth(900)
-        # self.viewer.setFixedHeight(500)
 
         self.loop.timeout.connect(self.viewer.update_view)
 
         setup_layout.addWidget(self.rule_label)
         setup_layout.addWidget(self.rule)
+        setup_layout.addStretch()
+        setup_layout.addWidget(self.slider_label)
+        setup_layout.addWidget(self.slider)
         setup_layout.addStretch()
         setup_layout.addWidget(self.start)
         setup_layout.addWidget(self.reset)
@@ -63,7 +73,9 @@ class MainWindow(QWidget):
         self.board.reset()
         self.viewer.update_view()
 
-
+    def slider_changed(self, value):
+        self.loop.currentTimer = 1010 - value
+        
 def window():
     app = QApplication(sys.argv)
     board = OneDim()

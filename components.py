@@ -1,7 +1,6 @@
 from PyQt5.QtCore import QTimer, Qt
-from PyQt5.QtGui import QImage, QIntValidator, QPixmap, qRgb
+from PyQt5.QtGui import QImage, QIntValidator, QPixmap
 from PyQt5.QtWidgets import QLabel, QPushButton, QLineEdit, QSizePolicy
-import numpy as np
 import qimage2ndarray
 
 class StartButton(QPushButton):
@@ -57,6 +56,7 @@ class ImageViewer(QLabel):
 
         self.setAlignment(Qt.AlignCenter)
         self.setScaledContents(True)
+        self.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
         self.V_margin = 0
         self.H_margin = 0
         self.h = 0
