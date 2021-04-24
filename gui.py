@@ -30,22 +30,26 @@ class MainWindow(QWidget):
         self.rule = TextBox()
         self.rule.textChanged.connect(self.board.set_ruleset)
 
-        self.rule_label = QLabel("Rule")
+        self.rule_label = QLabel("Rule:")
 
         self.viewer = ImageViewer()
-        self.viewer.resize(800, 600)
         self.viewer.set_model(self.board)
+        # self.viewer.resize(self.viewer.pixmap().size())
+        # self.viewer.setFixedWidth(900)
+        # self.viewer.setFixedHeight(500)
 
         self.loop.timeout.connect(self.viewer.update_view)
 
         setup_layout.addWidget(self.rule_label)
         setup_layout.addWidget(self.rule)
+        setup_layout.addStretch()
         setup_layout.addWidget(self.start)
         setup_layout.addWidget(self.reset)
+
        
         outer_layout.addLayout(setup_layout)
         outer_layout.addWidget(self.viewer)
-
+        self.viewer.update_view()
         self.setLayout(outer_layout)
 
     def start_stop_clicked(self):

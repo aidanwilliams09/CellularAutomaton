@@ -9,12 +9,17 @@ class OneDim:
     def init_map(self, x, y, ruleset):
         self.x = x
         self.y = y
+        self.gen = 0
         self.ruleset = ruleset
         self.map = np.zeros((self.x, self.y), dtype=np.uint8)
-        self.map[-1, self.y // 2] = 1
-
+        
     def next_gen(self):
     
+        if self.gen == 0:
+            self.map[-1, self.y // 2] = 1
+            self.gen += 1
+            return
+
         triplets = [(4 * self.map[-1, i - 1], 2 * self.map[-1, i], self.map[-1, (i + 1) % self.y]) 
         for i in range(self.y)]
 

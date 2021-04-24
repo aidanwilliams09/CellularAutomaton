@@ -44,7 +44,7 @@ class TextBox(QLineEdit):
         self.make_textbox()
 
     def make_textbox(self):
-        self.setGeometry(50, 50, 110, 35)
+        self.setFixedWidth(100)
         self.setAlignment(Qt.AlignCenter)
         self.setValidator(QIntValidator())
         self.setMaxLength(3)
@@ -54,8 +54,9 @@ class ImageViewer(QLabel):
 
     def __init__(self):
         super().__init__()
+
         self.setAlignment(Qt.AlignCenter)
-        self.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
+        self.setScaledContents(True)
         self.V_margin = 0
         self.H_margin = 0
         self.h = 0
@@ -66,6 +67,7 @@ class ImageViewer(QLabel):
         self.update_view()
 
     def update_view(self):
+
         grid = self.od.get_map()
         self.h = grid.shape[0]
         self.w = grid.shape[1]
