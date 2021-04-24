@@ -39,4 +39,4 @@ The game can be launched with `blocks.py`
 $ python3 blocks.py
 ```
 
-##TODO: Add in functionality and future developments
+## TODO: Add in functionality and future developments
