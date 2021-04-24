@@ -3,3 +3,4 @@ __pycache__/
 .vscode/
 env/
 blocks.code-workspace
+.DS_Store
