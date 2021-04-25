@@ -42,4 +42,13 @@ $ python3 blocks.py
 ## Demo
 https://user-images.githubusercontent.com/31539534/115976911-9b7bbd80-a540-11eb-9452-43aeb43e9480.mov
 
+## Requirements
+Software | Version
+---------|--------
+Python | >= 3.6
+PyQt5 | >= 5.15
+Numpy | >= 1.20
+qimage2ndarray | 1.8.3
 
+## Future Developments
+Planned implementation of 2D and potentially 3D cellular automaton
