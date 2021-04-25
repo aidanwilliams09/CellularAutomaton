@@ -5,6 +5,9 @@ import sys
 from onedim.onedim import OneDim
 from components import StartButton, TextBox, ImageViewer, Loop, ResetButton
 
+'''
+Set up the main window and link all elements to events
+'''
 class MainWindow(QWidget):
     def __init__(self, board, loop):
         super().__init__()
@@ -75,7 +78,10 @@ class MainWindow(QWidget):
 
     def slider_changed(self, value):
         self.loop.currentTimer = 1010 - value
-        
+
+'''
+Callable for main to instatiate game and launch window
+'''
 def window():
     app = QApplication(sys.argv)
     board = OneDim()

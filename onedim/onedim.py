@@ -1,5 +1,9 @@
 import numpy as np
 
+'''
+OneDim represents the game board
+Creates the board and sets the ruleset
+'''
 class OneDim:
 
     def __init__(self, x=100, y=200, ruleset=np.zeros((1, 8))):
@@ -13,6 +17,9 @@ class OneDim:
         self.ruleset = ruleset
         self.map = np.zeros((self.x, self.y), dtype=np.uint8)
         
+    '''
+    Produces the next generation according to the current ruleset
+    '''
     def next_gen(self):
     
         if self.gen == 0:

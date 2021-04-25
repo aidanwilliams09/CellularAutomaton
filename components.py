@@ -3,6 +3,9 @@ from PyQt5.QtGui import QImage, QIntValidator, QPixmap
 from PyQt5.QtWidgets import QLabel, QPushButton, QLineEdit, QSizePolicy
 import qimage2ndarray
 
+'''
+StartButton inherits from QPushButton to define custom button
+'''
 class StartButton(QPushButton):
     
     def __init__(self):
@@ -25,6 +28,9 @@ class StartButton(QPushButton):
 
         self.stop = not self.stop
 
+'''
+ResetButton inherits from QPushButton to define custom button
+'''
 class ResetButton(QPushButton):
 
     def __init__(self):
@@ -36,6 +42,9 @@ class ResetButton(QPushButton):
         self.setText('Reset')
         self.setStyleSheet('background-color:orange; border: 2px solid black')
         
+'''
+TexBox inherits from QLineEdit to defin custom text box
+'''
 class TextBox(QLineEdit):
     
     def __init__(self):
@@ -48,7 +57,10 @@ class TextBox(QLineEdit):
         self.setValidator(QIntValidator())
         self.setMaxLength(3)
 
-
+'''
+Custom QLabel used to create the view of the board
+Receives data from OneDim to create an image and update the view
+'''
 class ImageViewer(QLabel):
 
     def __init__(self):
@@ -87,6 +99,9 @@ class ImageViewer(QLabel):
         return qim
 
 
+'''
+Custom Timer to update the gameboard every currentTimer ms
+'''
 class Loop(QTimer):
 
     def __init__(self):
