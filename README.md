@@ -39,4 +39,7 @@ The game can be launched with `blocks.py`
 $ python3 blocks.py
 ```
 
-## TODO: Add in functionality and future developments
+## Demo
+https://user-images.githubusercontent.com/31539534/115976911-9b7bbd80-a540-11eb-9452-43aeb43e9480.mov
+
+
