@@ -51,4 +51,5 @@ Numpy | >= 1.20
 qimage2ndarray | 1.8.3
 
 ## Future Developments
-Planned implementation of 2D and potentially 3D cellular automaton
+* Planned implementation of 2D and potentially 3D cellular automaton
+* Neural Network to take a starting positiion and use the rules to reach another desired position
