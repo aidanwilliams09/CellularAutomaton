@@ -1,7 +1,7 @@
 # Blocks: CellularAutomaton
 
 ## Overview
-Cellular Automaton have been around since the 20th century. However, Stephen Wolfram's book *A New Kind of Science* released in 2002 brought new interest to the subject. 
+Cellular Automaton has been around since the 20th century. However, Stephen Wolfram's book *A New Kind of Science* released in 2002 brought new interest to the subject. 
 Originally conceived in the 1940's by mathematician John Von Neumann, cellular automaton represent any system in which a machine is able to create copies of itself according to specific rules.
 This idea was then popularized in John Conway's **Game of Life**. Played on a two dimensional board, each cell lives or dies based on the amount of neighbors that are dead or alive.
 Upon mass adoption of the personal computer and the advent of the field of Computer Science, Stephen Wolfram proposed the idea that the universe could function according to cellular automaton rules,
